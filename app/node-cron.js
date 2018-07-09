@@ -36,7 +36,7 @@ cfg.schedule.forEach(function(schedule)
         request('http://' + cfg.Url + ':' + cfg.Port + schedule.path, function (err, res, body) {
             if (err)
                 logger.error(err);
-            logger.info(res && res.statusCode);
+            logger.info(res && res.statusCode + "path:" + schedule.path);
             logger.debug(body);
         });
     });
